@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private CharacterController _characterController;
     private InputManger _input;
     private bool _isAlive = true;
+    private float _delayBeforePlayerDead = 2f;
 
     public float MaxHealth => _maxHealth;
     public float MinHealth => _minHealth;
@@ -26,12 +29,11 @@ public class PlayerHealth : MonoBehaviour
         _animator.SetFloat("health", _currentHealth);
         _playerMotorTest = GetComponent<PlayerMotorTest>();
         _characterController = GetComponent<CharacterController>();
-        //_input = GetComponent<InputManger>();
     }
 
     private void Start()
     {
-        HealthChange?.Invoke(_currentHealth);
+        HealthChange?.Invoke(_currentHealth);        
     }
 
     public void ApplyDamage(int damage)
@@ -70,6 +72,17 @@ public class PlayerHealth : MonoBehaviour
         _animator.SetFloat("health", _currentHealth);
         _characterController.enabled = false;
         _playerMotorTest.enabled = false;
-        //_input.enabled = false;
+        StartCoroutine(DelayBeforePlayerDead());
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private IEnumerator DelayBeforePlayerDead()
+    { 
+        yield return new WaitForSeconds(_delayBeforePlayerDead);
+        RestartLevel();
     }
 }

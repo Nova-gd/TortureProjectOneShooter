@@ -2,16 +2,30 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    private int _damage = 90;
+    [SerializeField] private int _damage = 999;
 
-    private void OnCollisionEnter(Collision collision)
+    private float _timeForDie = 2f;
+
+
+    private void OnTriggerEnter(Collider collision)
     {
-        Transform hitTransform = collision.transform;
-
-        if (hitTransform.CompareTag("Enemy"))
-        {           
-            hitTransform.GetComponent<Enemy>().ApplyDamage(_damage);
+        if (collision.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            enemy.ApplyDamage(_damage);
         }
-        Destroy(gameObject);
-    }    
+
+        Destroy(gameObject, _timeForDie);
+    }
+
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Transform hitTransform = collision.transform;
+
+    //    if (hitTransform.CompareTag("Enemy"))
+    //    {
+    //        hitTransform.GetComponent<Enemy>().ApplyDamage(_damage);
+    //    }
+    //    Destroy(gameObject);
+    //}
 }

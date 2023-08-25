@@ -6,37 +6,27 @@ public class PatrolState : BaseState
     private float _minimalDistanceWayPoint = 0.2f;
 
     public int WayPointIndex;
-    public float WaitTimer;    
-
-    public override void Enter()
-    {
-       
-    }
+    public float WaitTimer;
 
     public override void Perform()
     {
         PatrolCycle();
 
-        if (enemy.CanSeePlayer()) 
+        if (Enemy.CanSeePlayer()) 
         { 
             stateMachine.ChangeState(new AttackState());
         }
     }
 
-    public override void Exit()
-    {
-        
-    }
-
     public void PatrolCycle()
     {            
-        if (enemy.Agent.remainingDistance < _minimalDistanceWayPoint) 
+        if (Enemy.Agent.remainingDistance < _minimalDistanceWayPoint) 
         {
             WaitTimer += Time.deltaTime;
 
             if (WaitTimer > _enemyWaitOnPoint)
             {
-                if (WayPointIndex < enemy.path.waypoints.Count -1)
+                if (WayPointIndex < Enemy.Path.waypoints.Count -1)
                 {
                     WayPointIndex++; ;
                 }
@@ -45,7 +35,7 @@ public class PatrolState : BaseState
                     WayPointIndex=0;
                 }
             }
-            enemy.Agent.SetDestination(enemy.path.waypoints[WayPointIndex].position);
+            Enemy.Agent.SetDestination(Enemy.Path.waypoints[WayPointIndex].position);
         }
     }
 }

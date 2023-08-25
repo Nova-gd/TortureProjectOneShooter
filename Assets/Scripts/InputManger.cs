@@ -13,9 +13,7 @@ public class InputManger : MonoBehaviour
         _playerInput = new PlayerInput();
         OnFoot = _playerInput.OnFoot;
         _motor = GetComponent<PlayerMotorTest>();
-        _look = GetComponent<PlayerLook>();
-
-        //OnFoot.Jump.performed += ctx => _motor.Jump();
+        _look = GetComponent<PlayerLook>();      
     }
 
     private void FixedUpdate()

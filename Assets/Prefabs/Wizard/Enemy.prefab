@@ -1978,9 +1978,9 @@ GameObject:
   - component: {fileID: 2357641078011843483}
   - component: {fileID: 2442277316514748075}
   - component: {fileID: 2401438519833780199}
-  - component: {fileID: 1117560936599698109}
   - component: {fileID: 767552094252269912}
   - component: {fileID: 2477502810711941535}
+  - component: {fileID: 4421606307006667673}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -2052,24 +2052,6 @@ CapsuleCollider:
   m_Height: 1.882848
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
---- !u!114 &1117560936599698109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356422772080986499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f129ae34e790de4eaa9a3e7ce7e763e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 0}
-  _maxHealth: 100
-  _currentState: 
-  _player: {fileID: 0}
-  SourceOfDamage: {fileID: 2333062297978014011}
-  fireRate: 1
 --- !u!114 &767552094252269912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,6 +2086,27 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4421606307006667673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356422772080986499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f129ae34e790de4eaa9a3e7ce7e763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  _maxHealth: 100
+  _currentState: 
+  _player: {fileID: 1253086935255656, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
+  _signDistance: 20
+  _fieldOfView: 85
+  _eyeHight: 0
+  SourceOfDamage: {fileID: 2333062297978014011}
+  fireRate: 0.5
 --- !u!1 &2356427262078845613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,8 +2750,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 45.709896
-  m_Center: {x: -0.04371643, y: 0, z: -0.10104179}
+  m_Radius: 19.635946
+  m_Center: {x: -0.043716427, y: 0.95929146, z: -0.10796308}
 --- !u!54 &4024633924878619184
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2788,7 +2791,7 @@ GameObject:
   - component: {fileID: 3562074882960350161}
   - component: {fileID: 8290645091919834137}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: FlyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1212367531295714206}
   - component: {fileID: 6928892123557312029}
   - component: {fileID: 3541831880526433291}
-  - component: {fileID: 8315087359797087982}
   - component: {fileID: 7425616832227412058}
+  - component: {fileID: 2673246580726091432}
   m_Layer: 0
   m_Name: FireOrb
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 478539172177869092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2494559358893156975}
@@ -102,13 +102,25 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8315087359797087982
+--- !u!114 &7425616832227412058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478539172177869092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830521d6e4e7fb340acb3c7ba1c4d93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &2673246580726091432
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,18 +147,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7425616832227412058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478539172177869092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 830521d6e4e7fb340acb3c7ba1c4d93f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8092394792813346004
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 3895724829692970397}
   - component: {fileID: 5327670761173392276}
   m_Layer: 0
-  m_Name: Fire (1)
+  m_Name: FireEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 8092394792813346004}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000002, z: 0.10000002}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7569270366691004928}

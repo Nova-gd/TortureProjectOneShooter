@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Transform projectileSource;
     [SerializeField] private GameObject playerProjectilePrefab;
     [SerializeField] private float projectileSpeed = 80f;
+    [SerializeField] private int _projectileCount = 5;
 
     private Camera _playerCamera;
     private bool isCameraMoving = false;
@@ -15,6 +16,8 @@ public class PlayerShoot : MonoBehaviour
     private bool canShoot = false;
     private PlayerMotorTest _playerMotorTest;
     private CharacterController _characterController;
+
+    public int ProjectileCount => _projectileCount;
 
     private void Start()
     {
@@ -79,12 +82,17 @@ public class PlayerShoot : MonoBehaviour
 
     private void ShootProjectile()
     {
-        GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
-        Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
+        if (_projectileCount > 0 )
+        {
+            _projectileCount--;
 
-        Vector3 shootDirection = _playerCamera.transform.forward;
-        projectileRigidbody.velocity = shootDirection * projectileSpeed;
+            GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
+            Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
 
-        projectile.transform.Rotate(90f, 0f, 0f);
+            Vector3 shootDirection = _playerCamera.transform.forward;
+            projectileRigidbody.velocity = shootDirection * projectileSpeed;
+
+            projectile.transform.Rotate(90f, 0f, 0f);
+        }
     }
 }

@@ -7,37 +7,24 @@ public class AttackState : BaseState
     private float _shotTimer;
     private float _shotForce = 10f;
     private float _timeForChangeState = 3f;
-
-    //private int minimumEnemyWasteTime = 1;
-    //private int maximumEnemyWasteTime = 3;
-    //private int movementInsideUnitSphere = 2;
-
-    public override void Enter() { }
-
-    public override void Exit() { }
+    private int resetNumber = 0;
 
     public override void Perform()
     {
-        if (enemy.CanSeePlayer())
+        if (Enemy.CanSeePlayer())
         {
-            _losePlayerTimer = 0;
+            _losePlayerTimer = resetNumber;
             _moveTimer += Time.deltaTime;
             _shotTimer += Time.deltaTime;
 
-            enemy.transform.LookAt(enemy.Player.transform);
+            Enemy.transform.LookAt(Enemy.Player.transform);
 
-            if (_shotTimer > enemy.fireRate)
+            if (_shotTimer > Enemy.fireRate)
             {
                 Shoot();
-            }
+            }    
 
-            //if (moveTimer > Random.Range(3, 7))
-            //{
-            //    enemy.Agent.SetDestination(enemy.transform.position + (Random.insideUnitSphere * 5));
-            //    moveTimer = 0;
-            //}
-
-            enemy.LastKnowPos = enemy.Player.transform.position;
+            Enemy.LastKnowPos = Enemy.Player.transform.position;
         }
         else
         {
@@ -49,16 +36,17 @@ public class AttackState : BaseState
             }
         }
     }
+
     public void Shoot()
     {
-        Transform sourceOfDamage = enemy.SourceOfDamage;
+        Transform sourceOfDamage = Enemy.SourceOfDamage;
 
-        GameObject projectile = GameObject.Instantiate(Resources.Load("Prefabs/FireOrb") as GameObject, sourceOfDamage.position, enemy.transform.rotation);
+        GameObject projectile = GameObject.Instantiate(Resources.Load("Prefabs/FireOrb") as GameObject, sourceOfDamage.position, Enemy.transform.rotation);
 
-        Vector3 shootDirection = ((enemy.Player.transform.position + Vector3.up) - sourceOfDamage.transform.position).normalized;
+        Vector3 shootDirection = ((Enemy.Player.transform.position + Vector3.up) - sourceOfDamage.transform.position).normalized;
 
         projectile.GetComponent<Rigidbody>().velocity = shootDirection * _shotForce;
 
-        _shotTimer = 0;
+        _shotTimer = resetNumber;
     }
 }

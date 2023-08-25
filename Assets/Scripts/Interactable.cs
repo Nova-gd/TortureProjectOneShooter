@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
     public string PromptMessage;
     public bool UseEvents;

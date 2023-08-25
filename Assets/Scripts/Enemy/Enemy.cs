@@ -3,24 +3,26 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
-{
-    public Path path;
+{    
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private string _currentState;
     [SerializeField] private GameObject _player;
+    [SerializeField] private Path _path;
 
     private int _currentHealth;
     private int _minHealth = 0;
     private StateMachine _stateMachine;
-    private NavMeshAgent _agent;    
+    private NavMeshAgent _agent;
     private Vector3 _lastKnowPos;
     private TargetDetective _targetDetective;
 
     public int MaxHealth => _maxHealth;
     public int MinHealth => _minHealth;
+    public Path Path => _path;
     public NavMeshAgent Agent { get => _agent; }
     public GameObject Player { get => _player; }
     public Vector3 LastKnowPos { get => _lastKnowPos; set => _lastKnowPos = value; }
+   
 
     [Header("Sight Values")]
     private float _signDistance = 20f;
@@ -89,9 +91,8 @@ public class Enemy : MonoBehaviour
             if (_currentHealth <= 0)
             {
                 EnemyDie?.Invoke(this);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
-
 }

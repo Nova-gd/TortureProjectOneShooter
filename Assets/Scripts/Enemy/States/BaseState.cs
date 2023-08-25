@@ -1,9 +1,10 @@
 public abstract class BaseState
 {
-    public Enemy enemy;
+    public Enemy Enemy; 
 
     public StateMachine stateMachine;
-    public abstract void Enter();
-    public abstract void Perform();
-    public abstract void Exit();
+
+    public virtual void Enter(){}
+    public virtual void Perform(){}
+    public virtual void Exit(){}
 }

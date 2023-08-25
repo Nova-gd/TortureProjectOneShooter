@@ -10,7 +10,7 @@ public class CountDeadMage : MonoBehaviour
     [SerializeField] private List<Enemy> _enemies;
 
     private int _deadMages = 0;
-    private float _delayBeforeNextLvl = 1f;
+    private float _delayBeforeNextLvl = 3f;
 
     private void OnEnable()
     {      

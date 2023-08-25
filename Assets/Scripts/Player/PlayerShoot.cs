@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
     private bool canShoot = false;
     private PlayerMotorTest _playerMotorTest;
     private CharacterController _characterController;
+    private AudioSource _shootSound;
 
     public int ProjectileCount => _projectileCount;
 
@@ -24,6 +25,7 @@ public class PlayerShoot : MonoBehaviour
         _playerCamera = GetComponent<PlayerLook>().Camera;
         _playerMotorTest = GetComponent<PlayerMotorTest>();
         _characterController = GetComponent<CharacterController>();
+        _shootSound = GetComponentInChildren<AudioSource>();
 
     }
 
@@ -86,6 +88,8 @@ public class PlayerShoot : MonoBehaviour
         {
             _projectileCount--;
 
+            _shootSound.Play();
+
             GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
 
@@ -94,5 +98,10 @@ public class PlayerShoot : MonoBehaviour
 
             projectile.transform.Rotate(90f, 0f, 0f);
         }
+    }
+
+    public void SetProjectileCount()
+    {
+        _projectileCount++;
     }
 }

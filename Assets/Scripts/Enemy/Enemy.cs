@@ -3,11 +3,15 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
-{    
+{
+    [Range(0.1f, 10)] public float fireRate;
+    public Transform SourceOfDamage;
+
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private string _currentState;
     [SerializeField] private GameObject _player;
     [SerializeField] private Path _path;
+    [SerializeField] private GameObject _coinPrefab;      
 
     private int _currentHealth;
     private int _minHealth = 0;
@@ -15,6 +19,10 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent _agent;
     private Vector3 _lastKnowPos;
     private TargetDetective _targetDetective;
+    private float _signDistance = 20f;
+    private float _fieldOfView = 85f;
+    private float _eyeHight;   
+    private AudioSource _takeDamageSound;
 
     public int MaxHealth => _maxHealth;
     public int MinHealth => _minHealth;
@@ -22,17 +30,6 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent Agent { get => _agent; }
     public GameObject Player { get => _player; }
     public Vector3 LastKnowPos { get => _lastKnowPos; set => _lastKnowPos = value; }
-   
-
-    [Header("Sight Values")]
-    private float _signDistance = 20f;
-    private float _fieldOfView = 85f;
-    private float _eyeHight;
-
-    [Header("Weapon Values")]
-    public Transform SourceOfDamage;
-    [Range(0.1f, 10)]
-    public float fireRate;
 
     public event Action<Enemy> EnemyDie;
 
@@ -43,6 +40,7 @@ public class Enemy : MonoBehaviour
         _stateMachine.Initialise();
         _currentHealth = _maxHealth;
         _targetDetective = GetComponentInChildren<TargetDetective>();
+        _takeDamageSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -86,13 +84,21 @@ public class Enemy : MonoBehaviour
         {
             _currentHealth -= damage;
 
+            _takeDamageSound.Play();
+
             _currentHealth = Mathf.Clamp(_currentHealth, _minHealth, _maxHealth);
 
             if (_currentHealth <= 0)
-            {
+            {                
                 EnemyDie?.Invoke(this);
+                DropCoin();
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    private void DropCoin()
+    {        
+        Instantiate(_coinPrefab, transform.position, Quaternion.identity);
     }
 }

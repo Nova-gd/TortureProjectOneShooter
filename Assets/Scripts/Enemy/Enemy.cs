@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private string _currentState;
     [SerializeField] private GameObject _player;
     [SerializeField] private Path _path;
-    [SerializeField] private GameObject _coinPrefab;      
+    [SerializeField] private GameObject _coinPrefab;
+    [SerializeField] private EnemyHealthBar _enemyHealthBar;
 
     private int _currentHealth;
     private int _minHealth = 0;
@@ -33,6 +34,11 @@ public class Enemy : MonoBehaviour
 
     public event Action<Enemy> EnemyDie;
 
+    private void Awake()
+    {
+        _enemyHealthBar = GetComponentInChildren<EnemyHealthBar>();
+    }
+
     void Start()
     {
         _stateMachine = GetComponent<StateMachine>();
@@ -41,6 +47,7 @@ public class Enemy : MonoBehaviour
         _currentHealth = _maxHealth;
         _targetDetective = GetComponentInChildren<TargetDetective>();
         _takeDamageSound = GetComponent<AudioSource>();
+        _enemyHealthBar.UpdateHealthBar(_currentHealth,_maxHealth);
     }
 
     void Update()
@@ -83,6 +90,8 @@ public class Enemy : MonoBehaviour
         if (damage >= 0)
         {
             _currentHealth -= damage;
+
+            _enemyHealthBar.UpdateHealthBar(_currentHealth, _maxHealth);
 
             _takeDamageSound.Play();
 

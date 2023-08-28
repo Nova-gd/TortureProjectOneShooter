@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GoldCount : MonoBehaviour
+public class ShopGoldCount : MonoBehaviour
 {
     [SerializeField] private Text _goldCountText;
-    [SerializeField] private PlayerGolds _playerGolds; 
+    [SerializeField] private GameManager _playerGolds;
 
     private void Start()
     {
@@ -16,9 +16,10 @@ public class GoldCount : MonoBehaviour
         UpdateCountText();
     }
 
+
     private void UpdateCountText()
     {
-        int totalGold = _playerGolds.Golds;
+        int totalGold = _playerGolds.CollectedCoins;
         _goldCountText.text = totalGold.ToString();
-    } 
+    }
 }

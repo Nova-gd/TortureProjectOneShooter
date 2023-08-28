@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private int _damage = 40;
+    [SerializeField] private int _damage = 40;
     private float _timeToDie = 3f;
     private AudioSource _flyBurnSound;
     private AudioSource _burnSound;

@@ -8,6 +8,8 @@ public class CountDeadMage : MonoBehaviour
 {
     [SerializeField] private Text _enemyCountText;    
     [SerializeField] private List<Enemy> _enemies;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private PlayerGolds _playerGold;
 
     private int _deadMages = 0;
     private float _delayBeforeNextLvl = 3f;
@@ -53,12 +55,15 @@ public class CountDeadMage : MonoBehaviour
 
     private IEnumerator DelayBeforeNextLvl()
     {        
-        yield return new WaitForSeconds(_delayBeforeNextLvl);        
+        yield return new WaitForSeconds(_delayBeforeNextLvl);
+        _gameManager.SaveGold(_playerGold.Golds);
+        _gameManager.SaveScene();
+
         CompleteLevel();
     }
 
     private void CompleteLevel()
-    {        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    {
+        SceneManager.LoadScene("ShopScreen");        
     }
 }

@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
+    [SerializeField] private GameManager _gameManager;
+
 
     private float _currentHealth;
     private float _minHealth = 0;
@@ -18,17 +21,20 @@ public class PlayerHealth : MonoBehaviour
 
     public float MaxHealth => _maxHealth;
     public float MinHealth => _minHealth;
+    public float CurrentHealth => _currentHealth;
     public bool IsAlive => _isAlive;
+
 
     public event Action<float> HealthChange;
 
     private void Awake()
     {
+        _maxHealth += _gameManager.LoadMaxHealth();
         _currentHealth = _maxHealth;
         _animator = GetComponentInChildren<Animator>();
         _animator.SetFloat("health", _currentHealth);
         _playerMotorTest = GetComponent<PlayerMotorTest>();
-        _characterController = GetComponent<CharacterController>();
+        _characterController = GetComponent<CharacterController>();        
     }
 
     private void Start()

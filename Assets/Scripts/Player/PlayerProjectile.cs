@@ -5,7 +5,7 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private GameManager _gameManager;
 
-    private float _timeForDie = 2f;
+    private float _timeForDie = 5f;
 
     private void Start()
     {

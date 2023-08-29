@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class ProjectilePickUp : MonoBehaviour
 {
     [SerializeField] private PlayerShoot _projectileForShoot;
-    private AudioSource _getProjectileSound;
+    [SerializeField] private float _jumpHeightAnimation = 0.5f;
+
+    private AudioSource _projectilePickUpSound;
     private void Start()
     {
-        _getProjectileSound = GetComponent<AudioSource>();
+        _projectilePickUpSound = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -21,8 +24,19 @@ public class ProjectilePickUp : MonoBehaviour
 
     private IEnumerator PlayAndDestroy()
     {
-        _getProjectileSound.Play();
-        yield return new WaitForSeconds(_getProjectileSound.clip.length);
+        _projectilePickUpSound.Play();
+        float animationDuration = PickUpAnimation();        
+        yield return new WaitForSeconds(animationDuration);
         Destroy(gameObject);
+    }
+
+    private float PickUpAnimation()
+    {        
+        Vector3 initialPosition = transform.position;  
+        float animationDuration = 0.5f;
+
+        transform.DOJump(initialPosition + Vector3.up * _jumpHeightAnimation, _jumpHeightAnimation, 1, animationDuration).SetEase(Ease.OutQuad);
+
+        return animationDuration;
     }
 }

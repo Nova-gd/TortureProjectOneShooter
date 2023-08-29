@@ -1,21 +1,25 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
     [SerializeField] private PlayerGolds _playerGolds;
-    private AudioSource _getCoinSound;
+    [SerializeField] private float _jumpHeightAnimation = 0.5f;
+
+    private AudioSource _coinPickUpSound;
 
     private void Start()
     {
-        _getCoinSound = GetComponent<AudioSource>();
+        _coinPickUpSound = GetComponent<AudioSource>();
 
     }
 
     private IEnumerator PlayAndDestroy()
-    {
-        _getCoinSound.Play();
-        yield return new WaitForSeconds(_getCoinSound.clip.length);  
+    {        
+        _coinPickUpSound.Play();
+        float animationDuration = PickUpAnimation();
+        yield return new WaitForSeconds(animationDuration);
         Destroy(gameObject);
     }
 
@@ -26,5 +30,15 @@ public class Coin : MonoBehaviour
             golds.AddGold();
             StartCoroutine(PlayAndDestroy());
         }
+    }
+
+    private float PickUpAnimation()
+    {
+        Vector3 initialPosition = transform.position;
+        float animationDuration = 0.5f;
+
+        transform.DOJump(initialPosition + Vector3.up * _jumpHeightAnimation, _jumpHeightAnimation, 1, animationDuration).SetEase(Ease.OutQuad);
+
+        return animationDuration;
     }
 }

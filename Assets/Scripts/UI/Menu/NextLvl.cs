@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class NextLvl : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
+
   public void NextLvlLoad()
     {
         {
             Debug.Log("Текущий индекс сцены: " + SceneManager.GetActiveScene().buildIndex);
 
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + _gameManager.LoadScene();
+            int nextSceneIndex =_gameManager.LoadScene();
 
             
             Debug.Log("Следующий индекс сцены: " + nextSceneIndex);

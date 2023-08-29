@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class PlayerMotorTest : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5.0f;
+    public bool CanMove { get; set; } = true;
+
+    [SerializeField] private float _speed;
+    [SerializeField] private GameManager _gameManager;
 
     private CharacterController _controller;
     private Vector3 _playerVelocity;
-    private Animator _animator;
-    public bool CanMove { get; set; } = true; 
+    private Animator _animator;    
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _animator = GetComponentInChildren<Animator>();
+        _speed += _gameManager.LoadMaxSpeed();
     }
 
     private void Update()

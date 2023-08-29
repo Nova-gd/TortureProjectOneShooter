@@ -9,6 +9,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject playerProjectilePrefab;
     [SerializeField] private float projectileSpeed = 80f;
     [SerializeField] private int _projectileCount = 5;
+    [SerializeField] private GameManager _gameManager;
+
 
     private Camera _playerCamera;
     private bool isCameraMoving = false;
@@ -26,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
         _playerMotorTest = GetComponent<PlayerMotorTest>();
         _characterController = GetComponent<CharacterController>();
         _shootSound = GetComponentInChildren<AudioSource>();
-
+        _projectileCount += _gameManager.LoadMaxProjectile();
     }
 
     private void Update()

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 40
+  _gameManager: {fileID: 2957990014732729221, guid: c5cfed36620891142a9b44d250f2d77f, type: 3}
 --- !u!65 &7892950027166626554
 BoxCollider:
   m_ObjectHideFlags: 0

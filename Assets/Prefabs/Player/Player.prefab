@@ -43,7 +43,7 @@ Transform:
   - {fileID: 2219988644576113708}
   - {fileID: 8878840154635483570}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3611270133506301454
 CharacterController:
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _gameManager: {fileID: 0}
 --- !u!114 &5101283611194474003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _gameManager: {fileID: 0}
 --- !u!114 &7749682481655721891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +175,7 @@ MonoBehaviour:
   playerProjectilePrefab: {fileID: 1858215100183691396, guid: a707d40fcbe929a48a0bc47828932ce0, type: 3}
   projectileSpeed: 40
   _projectileCount: 3
+  _gameManager: {fileID: 0}
 --- !u!136 &6398754130696527160
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -209,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _golds: 0
-  _gameManager: {fileID: 2957990014732729221, guid: c5cfed36620891142a9b44d250f2d77f, type: 3}
+  _gameManager: {fileID: 0}
 --- !u!1 &1633239640730322721
 GameObject:
   m_ObjectHideFlags: 0

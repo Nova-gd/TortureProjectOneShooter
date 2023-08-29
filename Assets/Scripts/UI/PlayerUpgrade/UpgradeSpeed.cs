@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeSpeed : MonoBehaviour
+public class UpgradeSpeed : Upgrade
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _speedIncrease = 10;
+    [SerializeField] private int _moneyForUpgrade = 2;
+    private AudioSource _audioSource;
+
+    private void Start()
     {
-        
+        _audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyUpgrade()
     {
-        
+        if (_gameManager.CollectedCoins >= _moneyForUpgrade)
+        {
+            _gameManager.SetGold(_moneyForUpgrade);
+            _audioSource.Play();
+            _gameManager.SaveMaxSpeed(_speedIncrease);
+        }
     }
 }

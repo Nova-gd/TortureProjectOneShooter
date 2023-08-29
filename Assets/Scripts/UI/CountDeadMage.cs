@@ -54,10 +54,13 @@ public class CountDeadMage : MonoBehaviour
     }
 
     private IEnumerator DelayBeforeNextLvl()
-    {        
+    {
         yield return new WaitForSeconds(_delayBeforeNextLvl);
+
         _gameManager.SaveGold(_playerGold.Golds);
-        _gameManager.SaveScene();
+
+        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _gameManager.SaveScene(actualSceneIndex+1);
 
         CompleteLevel();
     }

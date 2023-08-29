@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    [SerializeField] private int _damage = 999;
+    [SerializeField] private int _damage;
+    [SerializeField] private GameManager _gameManager;
 
     private float _timeForDie = 2f;
 
+    private void Start()
+    {
+        _damage += _gameManager.LoadMaxDmg();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private int _addMaxHealth;
     private int _addProjectileMax;
     private int _addDmg;
-    private int _addSpeed;
+    private float _addSpeed;
 
     public int CollectedCoins => _collectedCoins;
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("AddDmg", _addDmg);
 
             _addSpeed = 0;
-            PlayerPrefs.SetInt("AddSpeed", _addSpeed);
+            PlayerPrefs.SetFloat("AddSpeed", _addSpeed);
         }
     }
 
@@ -46,16 +46,16 @@ public class GameManager : MonoBehaviour
         _addSpeed = LoadMaxSpeed();
     }
 
-    public int LoadMaxSpeed()
+    public float LoadMaxSpeed()
     {
-        int maxSpeed = PlayerPrefs.GetInt("AddSpeed", 0);
+        float maxSpeed = PlayerPrefs.GetFloat("AddSpeed", 0);
         return maxSpeed;
     }
 
-    public void SaveMaxSpeed(int addMaxSpeed)
+    public void SaveMaxSpeed(float addMaxSpeed)
     {
         _addSpeed += addMaxSpeed;
-        PlayerPrefs.SetInt("AddSpeed", _addSpeed);
+        PlayerPrefs.SetFloat("AddSpeed", _addSpeed);
     }
 
     public void SaveMaxDmg(int addMaxDmg)

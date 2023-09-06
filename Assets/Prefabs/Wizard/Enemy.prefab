@@ -2271,7 +2271,7 @@ GameObject:
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3133,8 +3133,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 19.635946
-  m_Center: {x: -0.043716427, y: 0.95929146, z: -0.10796308}
+  m_Radius: 23.568459
+  m_Center: {x: -0.043716423, y: 0.95929146, z: -0.0043153754}
 --- !u!54 &4024633924878619184
 Rigidbody:
   m_ObjectHideFlags: 0

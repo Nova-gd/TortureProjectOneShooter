@@ -27,8 +27,8 @@ public class Path : MonoBehaviour
             GUIStyle labelStyle = new GUIStyle();
             labelStyle.fontSize = 30;
             labelStyle.normal.textColor = debugColour;
-            if (drawNumbers)
-                Handles.Label(waypoints[i].position, i.ToString(), labelStyle);
+            //if (drawNumbers)
+            //    Handles.Label(waypoints[i].position, i.ToString(), labelStyle);
             
             if (i >= 1)
             {

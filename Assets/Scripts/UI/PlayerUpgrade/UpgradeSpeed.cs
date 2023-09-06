@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class UpgradeSpeed : Upgrade
 {
-    [SerializeField] private int _speedIncrease = 10;
-    [SerializeField] private int _moneyForUpgrade = 2;
+    [SerializeField] private float _speedIncrease;
+    [SerializeField] private int _moneyForUpgrade;
     private AudioSource _audioSource;
 
     private void Start()

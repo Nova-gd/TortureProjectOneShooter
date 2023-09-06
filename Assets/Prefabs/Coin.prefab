@@ -18,7 +18,7 @@ GameObject:
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 3105694168878029247}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -160, z: 0}
 --- !u!33 &392179620748044714
 MeshFilter:

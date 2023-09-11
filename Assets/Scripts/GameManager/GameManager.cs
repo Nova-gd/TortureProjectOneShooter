@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     private int _collectedCoins;
     private int _sceneIndex;
+    private float _timePassed;
     private int _addMaxHealth;
     private int _addProjectileMax;
     private int _addDmg;
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
 
             _sceneIndex = 1;
             PlayerPrefs.SetInt("LevelProgress", _sceneIndex);
+
+            _timePassed = 0;
+            PlayerPrefs.SetFloat("TimeProgress", _timePassed);
 
             _addMaxHealth = 0;
             PlayerPrefs.SetInt("MaxHealth", _addMaxHealth);
@@ -40,11 +44,26 @@ public class GameManager : MonoBehaviour
     {
         _collectedCoins = LoadGold();
         _sceneIndex = LoadScene();
+        _timePassed = LoadTime();
         _addMaxHealth = LoadMaxHealth();
         _addProjectileMax = LoadMaxProjectile();
         _addDmg = LoadMaxDmg();
         _addSpeed = LoadMaxSpeed();
     }
+
+    public void SaveTime(float newTime)
+    {
+        _timePassed = newTime;
+        PlayerPrefs.SetFloat("TimeProgress", _timePassed);
+    }
+
+    public float LoadTime()
+    {
+        float saveTime = PlayerPrefs.GetFloat("TimeProgress", 0);
+
+        return saveTime;
+    }
+
 
     public float LoadMaxSpeed()
     {

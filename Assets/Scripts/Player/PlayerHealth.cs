@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
     [SerializeField] private GameManager _gameManager;
+    [SerializeField] private TimeCount _timeCount;
+
 
 
     private float _currentHealth;
@@ -82,6 +84,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void RestartLevel()
     {
+        //_timeCount.ActualTime = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

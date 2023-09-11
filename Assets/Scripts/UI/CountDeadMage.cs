@@ -10,6 +10,7 @@ public class CountDeadMage : MonoBehaviour
     [SerializeField] private List<Enemy> _enemies;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private PlayerGolds _playerGold;
+    //[SerializeField] private TimeCount _timeCount;
 
     private int _deadMages = 0;
     private float _delayBeforeNextLvl = 3f;
@@ -58,6 +59,8 @@ public class CountDeadMage : MonoBehaviour
         yield return new WaitForSeconds(_delayBeforeNextLvl);
 
         _gameManager.SaveGold(_playerGold.Golds);
+        //_gameManager.SaveTime(_timeCount.ActualTime);
+
 
         int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
         _gameManager.SaveScene(actualSceneIndex+1);

@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SDKInit.unity
+    guid: 3683464b1b97d844c952cebb08f45cfb
   - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 265d64f5d09803845880c05d88e3269f

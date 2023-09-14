@@ -4,34 +4,46 @@ using UnityEngine.UI;
 public class TimeCount : MonoBehaviour
 {
     [SerializeField] private Text _timeCountText;
-    [SerializeField] private GameManager _gameManager;
-   
     private float _startTime;
-    private float _actualTime;
+    private bool _isRunning = false;
+    private float _leaderBoardTime;
 
-    
-    //public float ActualTime => _actualTime;
+    public float LeaderBoardTime => _leaderBoardTime;    
 
     private void Start()
     {
-        _startTime = _gameManager.LoadTime();
-
+        ResetTimer();         
+        StartTimer();
     }
 
     private void Update()
-    {    
-       
-        float elapsedTime = Time.time;
-
-        float templateTime = elapsedTime + _startTime;
-
-        DisplayTime(templateTime);
-           
+    {
+        if (_isRunning)
+        {
+            float currentTime = Time.time - _startTime; 
+            int minutes = Mathf.FloorToInt(currentTime / 60); 
+            int seconds = Mathf.FloorToInt(currentTime % 60); 
+            int milliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);            
+            string timeString = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            _timeCountText.text = timeString;
+            _leaderBoardTime = currentTime;
+        }
     }
 
-    private void DisplayTime(float elapsedTime)
-    {        
-        float seconds = Mathf.FloorToInt(elapsedTime % 60);
-        _timeCountText.text = seconds.ToString();
+    private void StartTimer()
+    {       
+        _isRunning = true;        
+    }
+
+    public void StopTimer()
+    {
+        _isRunning = false;
+    }
+
+    private void ResetTimer()
+    {
+        _isRunning = false;
+        _startTime = Time.time; 
+        _timeCountText.text = "00:00:000";
     }
 }

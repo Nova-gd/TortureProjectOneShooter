@@ -10,7 +10,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private TimeCount _timeCount;
 
 
-
     private float _currentHealth;
     private float _minHealth = 0;
     private Animator _animator;
@@ -54,8 +53,7 @@ public class PlayerHealth : MonoBehaviour
             HealthChange?.Invoke(_currentHealth);
 
             if (_currentHealth <= 0)
-            {
-                
+            {                
                 Die();
             }
         }
@@ -84,7 +82,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void RestartLevel()
     {
-        //_timeCount.ActualTime = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

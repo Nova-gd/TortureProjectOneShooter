@@ -7437,7 +7437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8764792, y: 0.92725915}
   m_AnchorMax: {x: 0.90843755, y: 0.98700005}
-  m_AnchoredPosition: {x: 10, y: -0.5}
+  m_AnchoredPosition: {x: -22.443, y: -1.8551025}
   m_SizeDelta: {x: 36, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216509940
@@ -11947,7 +11947,6 @@ MonoBehaviour:
   - {fileID: 1777574282}
   _gameManager: {fileID: 1257979424}
   _playerGold: {fileID: 441110532}
-  _timeCount: {fileID: 832114677}
 --- !u!1001 &335225223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40480,7 +40479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeCountText: {fileID: 1603384956}
-  _gameManager: {fileID: 1257979424}
 --- !u!4 &832114678
 Transform:
   m_ObjectHideFlags: 0
@@ -68389,8 +68387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90843755, y: 0.92725915}
   m_AnchorMax: {x: 0.98512506, y: 0.98700005}
-  m_AnchoredPosition: {x: -8.5, y: -3}
-  m_SizeDelta: {x: -35.033905, y: -7.042099}
+  m_AnchoredPosition: {x: -13.0460205, y: -1.8551025}
+  m_SizeDelta: {x: 26.092, y: -7.0421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1604946291 stripped
 Transform:

@@ -54,7 +54,7 @@ public class CountDeadMage : MonoBehaviour
 
             _timeCount.StopTimer();
 
-            _gameManager.SaveTime(_gameManager.LoadTime() + _timeCount.LevelSpendTime);
+            _gameManager.SavePoint(_gameManager.LoadPoint() + _timeCount.LevelSpendTime);
 
             int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
             _gameManager.SaveScene(actualSceneIndex + 1);

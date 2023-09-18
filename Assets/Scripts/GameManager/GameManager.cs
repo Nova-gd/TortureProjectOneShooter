@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     private int _collectedCoins;
     private int _sceneIndex;
-    private float _leaderBoardTime;
+    private float _leaderBoardPoint;
     private int _addMaxHealth;
     private int _addProjectileMax;
     private int _addDmg;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
             _sceneIndex = 1;
             PlayerPrefs.SetInt("LevelProgress", _sceneIndex);
 
-            _leaderBoardTime = 0;
-            PlayerPrefs.SetFloat("TimeProgress", _leaderBoardTime);
+            _leaderBoardPoint = 0;
+            PlayerPrefs.SetFloat("PointProgress", _leaderBoardPoint);
 
             _addMaxHealth = 0;
             PlayerPrefs.SetInt("MaxHealth", _addMaxHealth);
@@ -44,29 +44,25 @@ public class GameManager : MonoBehaviour
     {
         _collectedCoins = LoadGold();
         _sceneIndex = LoadScene();
-        _leaderBoardTime = LoadTime();
+        _leaderBoardPoint = LoadPoint();
         _addMaxHealth = LoadMaxHealth();
         _addProjectileMax = LoadMaxProjectile();
         _addDmg = LoadMaxDmg();
         _addSpeed = LoadMaxSpeed();
     }
 
-    public void SaveTime(float newTime)
+    public void SavePoint(float newPoints)
     {
-        _leaderBoardTime = newTime;
-        PlayerPrefs.SetFloat("TimeProgress", _leaderBoardTime);
+        _leaderBoardPoint = newPoints;
+        PlayerPrefs.SetFloat("PointProgress", _leaderBoardPoint);
     }
 
-    public float LoadTime()
+    public float LoadPoint()
     {
-        float saveTime = PlayerPrefs.GetFloat("TimeProgress", 0);
+        float savePont = PlayerPrefs.GetFloat("PointProgress", 0);
 
-        return saveTime;
+        return savePont;
     }
-
-
-
-
 
     public float LoadMaxSpeed()
     {

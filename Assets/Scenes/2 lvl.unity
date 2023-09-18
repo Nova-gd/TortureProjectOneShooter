@@ -11947,6 +11947,7 @@ MonoBehaviour:
   - {fileID: 1777574282}
   _gameManager: {fileID: 1257979424}
   _playerGold: {fileID: 441110532}
+  _timeCount: {fileID: 832114677}
 --- !u!1001 &335225223
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -50,20 +50,14 @@ public class CountDeadMage : MonoBehaviour
 
         if (_deadMages >= _enemies.Count)
         {
-
-
-
-
             _gameManager.SaveGold(_playerGold.Golds);
 
-            _timeCount.StopTimer();        
+            _timeCount.StopTimer();
 
-
+            _gameManager.SaveTime(_gameManager.LoadTime() + _timeCount.LevelSpendTime);
 
             int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
             _gameManager.SaveScene(actualSceneIndex + 1);
-
-
 
             StartCoroutine(DelayBeforeNextLvl());
         }

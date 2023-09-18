@@ -6,9 +6,9 @@ public class TimeCount : MonoBehaviour
     [SerializeField] private Text _timeCountText;
     private float _startTime;
     private bool _isRunning = false;
-    private float _leaderBoardTime;
+    private float _levelSpendTime;
 
-    public float LeaderBoardTime => _leaderBoardTime;    
+    public float LevelSpendTime => _levelSpendTime;    
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class TimeCount : MonoBehaviour
             int milliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);            
             string timeString = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
             _timeCountText.text = timeString;
-            _leaderBoardTime = currentTime;
+            _levelSpendTime = currentTime;
         }
     }
 

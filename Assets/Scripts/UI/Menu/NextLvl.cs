@@ -8,13 +8,8 @@ public class NextLvl : MonoBehaviour
 
   public void NextLvlLoad()
     {
-        {
-            Debug.Log("Текущий индекс сцены: " + SceneManager.GetActiveScene().buildIndex);
-
-            int nextSceneIndex =_gameManager.LoadScene();
-
-            
-            Debug.Log("Следующий индекс сцены: " + nextSceneIndex);
+        {  
+            int nextSceneIndex =_gameManager.LoadScene();  
 
             SceneManager.LoadScene(nextSceneIndex);
         }

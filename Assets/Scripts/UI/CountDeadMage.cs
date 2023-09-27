@@ -4,74 +4,96 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class CountDeadMage : MonoBehaviour
-{
-    [SerializeField] private Text _enemyCountText;    
-    [SerializeField] private List<Enemy> _enemies;
-    [SerializeField] private GameManager _gameManager;
-    [SerializeField] private PlayerGolds _playerGold;
-    [SerializeField] private TimeCount _timeCount;
 
-    private int _deadMages = 0;
-    private float _delayBeforeNextLvl = 3f;
+    public class CountDeadMage : MonoBehaviour
+    {       
 
-    private void OnEnable()
-    {      
-        foreach (Enemy enemy in _enemies) 
+        [SerializeField] private Text _enemyCountText;
+        [SerializeField] private List<Enemy> _enemies;
+        [SerializeField] private GameManager _gameManager;
+        [SerializeField] private PlayerGolds _playerGold;
+        [SerializeField] private TimeCount _timeCount;
+
+        private int _deadMages = 0;
+        private float _delayBeforeNextLvl = 3f;
+
+        private void OnEnable()
         {
-            enemy.EnemyDie += OnEnemyDestroyed; 
+            foreach (Enemy enemy in _enemies)
+            {
+                enemy.EnemyDie += OnEnemyDestroyed;
+            }
         }
-    }
 
-    private void OnDisable()
-    {
-        foreach (Enemy enemy in _enemies)
+        private void OnDisable()
+        {
+            foreach (Enemy enemy in _enemies)
+            {
+                enemy.EnemyDie -= OnEnemyDestroyed;
+            }
+        }
+
+        private void Start()
+        {
+            UpdateEnemyCountText();
+        }
+
+        public void OnEnemyDestroyed(Enemy enemy)
         {
             enemy.EnemyDie -= OnEnemyDestroyed;
+            _deadMages++;
+            UpdateEnemyCountText();
         }
-    }
 
-    private void Start()
-    {
-        UpdateEnemyCountText();
-    }
-
-    public void OnEnemyDestroyed(Enemy enemy) 
-    {        
-        enemy.EnemyDie -= OnEnemyDestroyed;
-        _deadMages++;
-        UpdateEnemyCountText();
-    }
-
-    private void UpdateEnemyCountText()
-    {
-        int totalEnemies = _enemies.Count;
-        _enemyCountText.text = _deadMages.ToString() + " / " + totalEnemies.ToString(); 
-
-        if (_deadMages >= _enemies.Count)
+        private void UpdateEnemyCountText()
         {
-            _gameManager.SaveGold(_playerGold.Golds);
+            int totalEnemies = _enemies.Count;
+            _enemyCountText.text = _deadMages.ToString() + " / " + totalEnemies.ToString();
 
-            _timeCount.StopTimer();
+            if (_deadMages >= _enemies.Count)
+            {
+                _gameManager.SaveGold(_playerGold.Golds);
 
-            _gameManager.SavePoint(_gameManager.LoadPoint() + _timeCount.LevelSpendTime);
+                _timeCount.StopTimer();
 
-            int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            _gameManager.SaveScene(actualSceneIndex + 1);
+                _gameManager.SavePoint(_gameManager.LoadPoint() + _timeCount.LevelSpendTime);
 
-            StartCoroutine(DelayBeforeNextLvl());
+                int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                _gameManager.SaveScene(actualSceneIndex + 1);
+
+                StartCoroutine(DelayBeforeNextLvl());
+            }
+        }
+
+        private IEnumerator DelayBeforeNextLvl()
+        {
+            yield return new WaitForSeconds(_delayBeforeNextLvl);
+
+            CompleteLevel();
+        }
+
+        private void CompleteLevel()
+        {
+            ShowAds();
+
+            SceneManager.LoadScene("ShopScreen");
+        }
+
+        private void ShowAds()
+        {
+            if (SceneManager.GetActiveScene().name != "1 lvl")
+            {
+                Time.timeScale = 0;
+
+                Debug.Log("Время в игре замерло");
+
+                Debug.Log("Реклама");
+
+                Time.timeScale = 1;
+
+                Debug.Log("Время в игре разморозилось");
+            }
         }
     }
 
-    private IEnumerator DelayBeforeNextLvl()
-    {
-        yield return new WaitForSeconds(_delayBeforeNextLvl);
 
-        CompleteLevel();
-    }
-
-    private void CompleteLevel()
-    {
-        SceneManager.LoadScene("ShopScreen");        
-    }
-}

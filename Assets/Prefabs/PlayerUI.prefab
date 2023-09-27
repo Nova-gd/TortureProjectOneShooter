@@ -109,10 +109,10 @@ RectTransform:
   m_Father: {fileID: 1058198604616862668}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.34756252, y: 0.28755558}
-  m_AnchorMax: {x: 0.6435415, y: 0.48100004}
-  m_AnchoredPosition: {x: 11.012451, y: 0}
-  m_SizeDelta: {x: -185.24371, y: -146.95007}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.5124512, y: -125}
+  m_SizeDelta: {x: 383.7563, y: 61.049927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5656794010822243830
 CanvasRenderer:
@@ -320,18 +320,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705060177141494982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4328843020449045019}
-  m_Father: {fileID: 1058198604616862668}
+  m_Father: {fileID: 659247258332026788}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -488, y: -100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -90.829315, y: 4.0800323}
   m_SizeDelta: {x: 103.23413, y: 108.05298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8103796095061866364
@@ -817,10 +817,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 270
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1328,17 +1328,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4296943506534280038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1058198604616862668}
+  m_Father: {fileID: 3303729973624194478}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 260, y: -227}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -35, y: -41.58481}
   m_SizeDelta: {x: 309.3208, y: 123.44989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6485899032666250473
@@ -1475,6 +1475,7 @@ RectTransform:
   - {fileID: 3841992506096028394}
   - {fileID: 8017772060458955143}
   - {fileID: 8959117584159133572}
+  - {fileID: 3644600931561754473}
   m_Father: {fileID: 1058198604616862668}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1579,6 +1580,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7078984584611632099}
+  - {fileID: 1580486145337999218}
   m_Father: {fileID: 1058198604616862668}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1904,16 +1906,14 @@ RectTransform:
   m_Children:
   - {fileID: 5493793950785063016}
   - {fileID: 3303729973624194478}
-  - {fileID: 3644600931561754473}
   - {fileID: 3039780955037232361}
   - {fileID: 6748130159824241003}
-  - {fileID: 1580486145337999218}
   - {fileID: 659247258332026788}
   - {fileID: 7529742080230602521}
   - {fileID: 8025024660781110623}
   - {fileID: 8433779364951489983}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1998,7 +1998,6 @@ MonoBehaviour:
   _enemyCountText: {fileID: 8401670485897497320}
   _enemies:
   - {fileID: 0}
-  - {fileID: 0}
   _gameManager: {fileID: 0}
   _playerGold: {fileID: 0}
   _timeCount: {fileID: 0}
@@ -2071,10 +2070,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 270
     m_Alignment: 4
     m_AlignByGeometry: 0

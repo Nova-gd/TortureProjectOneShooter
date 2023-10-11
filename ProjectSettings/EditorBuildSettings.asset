@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SDKInit.unity
-    guid: 3683464b1b97d844c952cebb08f45cfb
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
-    guid: 265d64f5d09803845880c05d88e3269f
+    path: Assets/Scenes/InitSdk.unity
+    guid: dbde79fd8dff3b547a8ed58f28ab630b
   - enabled: 1
     path: Assets/Scenes/1 lvl.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -47,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShopScreen.unity
     guid: ea09247ee17ace241bace1f568d92a12
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 265d64f5d09803845880c05d88e3269f
   m_configObjects: {}

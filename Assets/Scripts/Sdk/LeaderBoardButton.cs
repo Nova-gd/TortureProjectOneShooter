@@ -40,7 +40,6 @@ public class LeaderBoardButton : MonoBehaviour
     {
         _leaderBoardDisplay.gameObject.SetActive(true);
         _leaderBoardDisplay.OpenLeaderboard();
-        _leaderBoardDisplay.OpenLeaderboard();
     }
 
     private void Hide() => _leaderBoardDisplay.gameObject.SetActive(false);

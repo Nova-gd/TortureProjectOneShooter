@@ -1,4 +1,5 @@
 using Agava.YandexGames;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
@@ -35,13 +36,40 @@ public class LeaderBoardDisplay : MonoBehaviour
         Leaderboard.GetEntries(_leaderBoardName, 
         result =>
         {
+            int leaderNumber = result.entries.Length >= _leaderBoardName.Length ? _leaderBoardName.Length : result.entries.Length;
 
+            for (int i = 0; i < leaderNumber; i++)
+            {
+                string name = result.entries[i].player.publicName;
+
+                if (string.IsNullOrEmpty(name))
+                {
+                    name = _anonimus;
+                }
+
+                _leaderNames[i].text = name;
+                _scoreList[i].text = result.entries[i].formattedScore;
+                _ranks[i].text = result.entries[i].ToString();
+            }
         },
         error =>
         {
             //_logInPanel.Show();
         });
         //#endif
+    }
+
+    public void SetLeaderBoardScore()
+    {
+        Leaderboard.GetPlayerEntry(_leaderBoardName, OnSuccessCallback);
+    }
+
+    private void OnSuccessCallback(LeaderboardEntryResponse result)
+    {
+        if (result == null || _gameManager.LoadTime() > result.score)
+        {
+
+        }
     }
 
     private IEnumerator Start()

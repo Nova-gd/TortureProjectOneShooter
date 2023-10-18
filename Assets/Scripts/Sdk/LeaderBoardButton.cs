@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,6 +39,5 @@ public class LeaderBoardButton : MonoBehaviour
         _leaderBoardDisplay.gameObject.SetActive(true);
         _leaderBoardDisplay.OpenLeaderboard();
     }
-
     private void Hide() => _leaderBoardDisplay.gameObject.SetActive(false);
 }

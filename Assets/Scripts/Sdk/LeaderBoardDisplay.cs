@@ -1,8 +1,5 @@
 using Agava.YandexGames;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
 using TMPro;
 using UnityEngine;
 
@@ -68,7 +65,7 @@ public class LeaderBoardDisplay : MonoBehaviour
     {
         if (result == null || _gameManager.LoadTime() > result.score)
         {
-
+            Leaderboard.SetScore(_leaderBoardName, (int)_gameManager.LoadTime());
         }
     }
 

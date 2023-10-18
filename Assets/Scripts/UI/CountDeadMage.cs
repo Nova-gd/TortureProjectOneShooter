@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+using Agava.YandexGames;
+using System;
 
     public class CountDeadMage : MonoBehaviour
     {       
-
         [SerializeField] private Text _enemyCountText;
         [SerializeField] private List<Enemy> _enemies;
         [SerializeField] private GameManager _gameManager;
@@ -17,12 +17,21 @@ using System.Collections;
         private int _deadMages = 0;
         private float _delayBeforeNextLvl = 3f;
 
+        private Action _adOpened;        
+        private Action _adCloset;
+        private Action<bool> _interstitialAdClose;
+        private Action<string> _adErrorOccured;
+
         private void OnEnable()
         {
             foreach (Enemy enemy in _enemies)
             {
                 enemy.EnemyDie += OnEnemyDestroyed;
             }
+
+            _adOpened += OnAdOpen;
+            
+            _adCloset += OnAdClosed;
         }
 
         private void OnDisable()
@@ -31,6 +40,9 @@ using System.Collections;
             {
                 enemy.EnemyDie -= OnEnemyDestroyed;
             }
+
+            _adOpened -= OnAdOpen;
+            _adCloset -= OnAdClosed;
         }
 
         private void Start()
@@ -83,15 +95,21 @@ using System.Collections;
         {
             if (SceneManager.GetActiveScene().name != "1 lvl")
             {
-                Time.timeScale = 0;
-
-                Debug.Log("Время в игре замерло");
-
-                Debug.Log("Реклама");
-
-                Time.timeScale = 1;
-
-                Debug.Log("Время в игре разморозилось");
+                InterstitialAd.Show(_adOpened, _interstitialAdClose, _adErrorOccured);
             }
+        }
+
+        private void OnAdOpen()
+        {
+            AudioListener.pause = true;
+            AudioListener.volume = 0f;
+            Time.timeScale = 0f;
+        }
+
+        private void OnAdClosed()
+        {
+            AudioListener.pause = false;
+            AudioListener.volume = 1f;
+            Time.timeScale = 1f;
         }
     }

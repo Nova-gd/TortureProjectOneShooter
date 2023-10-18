@@ -88,11 +88,7 @@ using System;
         {
             ShowAds();
 
-            AudioListener.pause = false;
-            AudioListener.volume = 1f;
-            Time.timeScale = 1f;
-
-        SceneManager.LoadScene("ShopScreen");
+            SceneManager.LoadScene("ShopScreen");
         }
 
         private void ShowAds()
@@ -100,6 +96,10 @@ using System;
             if (SceneManager.GetActiveScene().name != "1 lvl")
             {
                 InterstitialAd.Show(_adOpened, _interstitialAdClose, _adErrorOccured);
+
+                AudioListener.pause = false;
+                AudioListener.volume = 1f;
+                Time.timeScale = 1f;
             }
         }
 

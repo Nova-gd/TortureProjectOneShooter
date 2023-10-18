@@ -11,7 +11,7 @@ public class InitSdk : MonoBehaviour
     }    
 
     private IEnumerator Init()
-    {       
+    {
         //yield return new WaitForSeconds(1);
 
         yield return YandexGamesSdk.Initialize();

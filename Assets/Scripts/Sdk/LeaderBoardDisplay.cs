@@ -11,8 +11,8 @@ public class LeaderBoardDisplay : MonoBehaviour
     [SerializeField] private TMP_Text[] _leaderNames;
     [SerializeField] private TMP_Text[] _scoreList;
     [SerializeField] private string _leaderBoardName = "LeaderBoard";
-    //[SerializeField] private TMP_Text _authorizationStatusText;
-    //[SerializeField] private TMP_Text _personalProfileDataPermissionStatusText;
+    [SerializeField] private TMP_Text _authorizationStatusText;
+    [SerializeField] private TMP_Text _personalProfileDataPermissionStatusText;
 
     private float _userScoreTime;
     private readonly string _anonimus = "Anonimus";
@@ -22,13 +22,13 @@ public class LeaderBoardDisplay : MonoBehaviour
         YandexGamesSdk.CallbackLogging = true;
         _userScoreTime = _gameManager.LoadTime();
 
-        //StartCoroutine(Start());
+        StartCoroutine(Start());
         gameObject.SetActive(false);
     }
 
     public void OpenLeaderboard()
     {
-        //StartCoroutine(Start());
+        StartCoroutine(Start());
 
         Leaderboard.GetEntries(_leaderBoardName, 
         result =>
@@ -69,27 +69,27 @@ public class LeaderBoardDisplay : MonoBehaviour
         }
     }
 
-//    private IEnumerator Start()
-//    {
-//#if !UNITY_WEBGL || UNITY_EDITOR
-//        //yield break;
-//#endif
-//        yield return YandexGamesSdk.Initialize();
+    private IEnumerator Start()
+    {
+#if !UNITY_WEBGL || UNITY_EDITOR
+        //yield break;
+#endif
+        yield return YandexGamesSdk.Initialize();
 
-//        while (true)
-//        {
-//            _authorizationStatusText.color = PlayerAccount.IsAuthorized ? Color.green : Color.red;
+        while (true)
+        {
+            _authorizationStatusText.color = PlayerAccount.IsAuthorized ? Color.green : Color.red;
 
-//            if (PlayerAccount.IsAuthorized)
-//            {
-//                _personalProfileDataPermissionStatusText.color = PlayerAccount.HasPersonalProfileDataPermission ? Color.green : Color.red;
-//            }
-//            else
-//            {
-//                _personalProfileDataPermissionStatusText.color = Color.red;
-//            }
+            if (PlayerAccount.IsAuthorized)
+            {
+                _personalProfileDataPermissionStatusText.color = PlayerAccount.HasPersonalProfileDataPermission ? Color.green : Color.red;
+            }
+            else
+            {
+                _personalProfileDataPermissionStatusText.color = Color.red;
+            }
 
-//            yield return new WaitForSecondsRealtime(0.25f);
-//        }
-//    }
+            yield return new WaitForSecondsRealtime(0.25f);
+        }
+    }
 }

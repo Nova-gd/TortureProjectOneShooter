@@ -1,3 +1,4 @@
+using Agava.YandexGames;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,8 +37,14 @@ public class LeaderBoardButton : MonoBehaviour
 
     private void Show()
     {
+        OnRequestPersonalProfileDataPermissionButtonClick();
         _leaderBoardDisplay.gameObject.SetActive(true);
-        _leaderBoardDisplay.OpenLeaderboard();
+        _leaderBoardDisplay.OpenLeaderboard();        
     }
     private void Hide() => _leaderBoardDisplay.gameObject.SetActive(false);
+
+    public void OnRequestPersonalProfileDataPermissionButtonClick()
+    {
+        PlayerAccount.RequestPersonalProfileDataPermission();
+    }
 }

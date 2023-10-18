@@ -88,7 +88,11 @@ using System;
         {
             ShowAds();
 
-            SceneManager.LoadScene("ShopScreen");
+            AudioListener.pause = false;
+            AudioListener.volume = 1f;
+            Time.timeScale = 1f;
+
+        SceneManager.LoadScene("ShopScreen");
         }
 
         private void ShowAds()

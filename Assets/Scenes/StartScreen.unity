@@ -506,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236, y: -307}
-  m_SizeDelta: {x: 175.0883, y: 76.9899}
+  m_AnchoredPosition: {x: 227.99098, y: -335.1441}
+  m_SizeDelta: {x: 232.296, y: 79.2781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513947885
 MonoBehaviour:
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your King
+  m_text: "\u0422\u0432\u043E\u0439 \u043A\u043E\u0440\u043E\u043B\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -556,10 +556,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 39.7
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 2
@@ -1083,7 +1083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -35}
+  m_AnchoredPosition: {x: 14, y: -39}
   m_SizeDelta: {x: 702.4275, y: 486.6847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080924249
@@ -1106,10 +1106,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Magicians think a lot about themselves.\r\n\r\nFireballs and magic arrows
-    do not give the right to people's lives.\r\n\r\nBands of wizards have captured
-    several villages. Go there and eliminate them. \r\n\r\nHowever, not all so simple.
-    Stay stealthy and careful so as not to die from enemy spells."
+  m_text: "\u0412\u043E\u043B\u0448\u0435\u0431\u043D\u0438\u043A\u0438 \u043C\u043D\u043E\u0433\u043E
+    \u0432\u043E\u0437\u043E\u043C\u043D\u0438\u043B\u0438 \u043E \u0441\u0435\u0431\u0435.\n\n\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0435
+    \u0448\u0430\u0440\u044B \u0438 \u043C\u0430\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u043D\u0435 \u0434\u0430\u044E\u0442 \u043F\u0440\u0430\u0432\u0430
+    \u043D\u0430 \u0436\u0438\u0437\u043D\u044C \u043B\u044E\u0434\u0435\u0439.\n\n\u0411\u0430\u043D\u0434\u044B
+    \u0432\u043E\u043B\u0448\u0435\u0431\u043D\u0438\u043A\u043E\u0432 \u0437\u0430\u0445\u0432\u0430\u0442\u0438\u043B\u0438
+    \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0434\u0435\u0440\u0435\u0432\u0435\u043D\u044C.
+    \u0418\u0434\u0438\u0442\u0435 \u0442\u0443\u0434\u0430 \u0438 \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435
+    \u0438\u0445.\n\n\u041E\u0434\u043D\u0430\u043A\u043E \u043D\u0435 \u0432\u0441\u0435
+    \u0442\u0430\u043A \u043F\u0440\u043E\u0441\u0442\u043E. \u041E\u0441\u0442\u0430\u0432\u0430\u0439\u0442\u0435\u0441\u044C
+    \u043D\u0435\u0437\u0430\u043C\u0435\u0442\u043D\u044B\u043C\u0438 \u0438 \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u044B\u043C\u0438,
+    \u0447\u0442\u043E\u0431\u044B \u043D\u0435 \u043F\u043E\u0433\u0438\u0431\u043D\u0443\u0442\u044C
+    \u043E\u0442 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0445 \u0437\u0430\u043A\u043B\u0438\u043D\u0430\u043D\u0438\u0439."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1653,7 +1662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1325325946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1898,8 +1907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 260}
-  m_SizeDelta: {x: 452.3128, y: 114.3606}
+  m_AnchoredPosition: {x: -7, y: 270}
+  m_SizeDelta: {x: 675.65, y: 114.3606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615257748
 MonoBehaviour:
@@ -1921,7 +1930,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Letter to the Mage Killer
+  m_text: "\u041F\u0438\u0441\u044C\u043C\u043E \u0434\u043B\u044F \u0423\u0431\u0438\u0446\u044B
+    \u043C\u0430\u0433\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1948,10 +1958,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.27
+  m_fontSize: 50.85
   m_fontSizeBase: 36.27
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 5

@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class InitSdk : MonoBehaviour
 {
-  
-    void Start()
+    private void Start()
     {  
         StartCoroutine(Init());
     }    
 
     private IEnumerator Init()
     {       
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
 
-        //yield return YandexGamesSdk.Initialize();       
+        yield return YandexGamesSdk.Initialize();
 
         SceneManager.LoadScene("StartScreen");
     }

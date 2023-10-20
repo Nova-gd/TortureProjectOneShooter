@@ -2,6 +2,7 @@ using Agava.YandexGames;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.WebGL;
 
 public class LeaderBoardDisplay : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class LeaderBoardDisplay : MonoBehaviour
     [SerializeField] private TMP_Text[] _ranks;
     [SerializeField] private TMP_Text[] _leaderNames;
     [SerializeField] private TMP_Text[] _scoreList;
-    [SerializeField] private string _leaderBoardName = "LeaderBoard";
+    [SerializeField] private string _leaderBoardName = "NewLeaderBoard";
     [SerializeField] private TMP_Text _authorizationStatusText;
     [SerializeField] private TMP_Text _personalProfileDataPermissionStatusText;
 
@@ -29,6 +30,9 @@ public class LeaderBoardDisplay : MonoBehaviour
     public void OpenLeaderboard()
     {
         StartCoroutine(Start());
+        
+
+
 
         Leaderboard.GetEntries(_leaderBoardName, 
         result =>
@@ -51,7 +55,7 @@ public class LeaderBoardDisplay : MonoBehaviour
         },
         error =>
         {
-            //_logInPanel.Show();
+            print(error);
         });
         //#endif
     }
@@ -63,8 +67,12 @@ public class LeaderBoardDisplay : MonoBehaviour
 
     private void OnSuccessCallback(LeaderboardEntryResponse result)
     {
+        print("Зашли в калбек до if");
+
         if (result == null || _gameManager.LoadTime() > result.score)
         {
+            print("Зашли в if");
+            print(_gameManager.LoadTime());
             Leaderboard.SetScore(_leaderBoardName, (int)_gameManager.LoadTime());
         }
     }

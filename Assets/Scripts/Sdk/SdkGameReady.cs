@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SdkGameReady : MonoBehaviour
 {    
-    void Start()
+    private void Start()
     {
         YandexGamesSdk.GameReady();
     }

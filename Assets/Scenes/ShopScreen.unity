@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 191734052}
   - component: {fileID: 191734051}
   m_Layer: 5
-  m_Name: Rang (2)
+  m_Name: Score2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 242619056}
   - component: {fileID: 242619055}
   m_Layer: 5
-  m_Name: Rang (4)
+  m_Name: Score4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2942,7 +2942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 189, y: -25}
+  m_AnchoredPosition: {x: 252, y: -25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981478701
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main menu
+  m_text: "\u041C\u0435\u043D\u044E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3416,7 +3416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.4
+  m_fontSize: 72
   m_fontSizeBase: 62.91
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3910,7 +3910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3937,7 +3937,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 61.25
   m_fontSizeBase: 80.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4393,7 +4393,7 @@ GameObject:
   - component: {fileID: 1304943031}
   - component: {fileID: 1304943030}
   m_Layer: 5
-  m_Name: Rang (1)
+  m_Name: Score1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4741,7 +4741,7 @@ GameObject:
   - component: {fileID: 1379874463}
   - component: {fileID: 1379874462}
   m_Layer: 5
-  m_Name: Rang (3)
+  m_Name: Score3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6782,7 +6782,7 @@ GameObject:
   - component: {fileID: 1931102686}
   - component: {fileID: 1931102685}
   m_Layer: 5
-  m_Name: Rang
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7264,7 +7264,7 @@ MonoBehaviour:
   - {fileID: 191734051}
   - {fileID: 1379874462}
   - {fileID: 242619055}
-  _leaderBoardName: NewLeaderBoard
+  _leaderBoardName: NewLeaderBoard1
   _authorizationStatusText: {fileID: 818825106}
   _personalProfileDataPermissionStatusText: {fileID: 1401363395}
 --- !u!1001 &2144737202

@@ -14,6 +14,7 @@ public class PlayerGolds : MonoBehaviour
 
     public void AddGold()
     {
-        _golds++;        
+        _golds++;
+        _gameManager.SaveGold(_golds);
     }
 }

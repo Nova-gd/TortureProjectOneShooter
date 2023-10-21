@@ -43,7 +43,7 @@ Transform:
   - {fileID: 2219988644576113708}
   - {fileID: 8878840154635483570}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3611270133506301454
 CharacterController:
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _gameManager: {fileID: 0}
+  _timeCount: {fileID: 0}
 --- !u!114 &5101283611194474003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +129,7 @@ MonoBehaviour:
   _camera: {fileID: 765206458625566981}
   _xSensitivity: 30
   _ySensitivity: 30
+  _joystick: {fileID: 0}
 --- !u!114 &4761424821999883041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _gameManager: {fileID: 0}
+  _joystick: {fileID: 0}
 --- !u!114 &7749682481655721891
 MonoBehaviour:
   m_ObjectHideFlags: 0

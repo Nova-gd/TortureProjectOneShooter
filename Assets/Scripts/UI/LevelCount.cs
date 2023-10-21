@@ -20,6 +20,6 @@ public class LevelCount : MonoBehaviour
     private void UpdateCountText()
     {
         int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        _levelCountText.text = "Level: " + actualSceneIndex.ToString();
+        _levelCountText.text = actualSceneIndex.ToString();
     }
 }

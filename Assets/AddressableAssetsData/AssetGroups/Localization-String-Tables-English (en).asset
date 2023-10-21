@@ -17,8 +17,22 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 74b8fcbee13e1fc4dba67055aa8ee01e
   m_SerializeEntries:
-  - m_GUID: a5ba3641c1b1476478755a341fe5ad3c
-    m_Address: UI Text_en
+  - m_GUID: 5d269bd3aadcaef449ff268c9ea82333
+    m_Address: MainMenu_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5d2df3f218818542af0e16151c8c748
+    m_Address: ShopScreen_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 367747ef47448924ea5ce832ffa49193
+    m_Address: gamePlayText_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

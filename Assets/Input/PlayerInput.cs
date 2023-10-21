@@ -130,61 +130,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""LeftStick"",
-                    ""id"": ""55667dfd-9e54-46df-b136-bd16613ad1c8"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8eab8511-bebc-4d0a-9fb1-81864c717571"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c732c46-00b0-46e6-b5d1-158c8114fbfa"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""243c50e2-3785-40aa-b19d-5ae008664763"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""11f8dd9d-9768-48bb-8dd3-bc45cb541bc8"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""8bc3f446-f524-46a9-869f-99978b185871"",
                     ""path"": ""<Keyboard>/space"",
@@ -199,17 +144,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""3f50c05d-fbaa-49df-9170-37bb8c293bc5"",
                     ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2521841d-e06a-4595-b4c7-181a1d9811b5"",
-                    ""path"": ""<Touchscreen>/touch0/radius"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -243,28 +177,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""27af80b1-edbc-4542-9d59-3fae308c5eb8"",
                     ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fed65cf9-0192-4f6c-ba1d-bbdacd66041c"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e18b798a-f0c3-4d0a-9b8d-2d2203546b15"",
-                    ""path"": ""<Touchscreen>/touch2/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

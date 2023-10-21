@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: ShopScreen Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: ShopScreen
+  m_TableCollectionNameGuidString: 8c7f247d352f0b246b603b06bb884a86
+  m_Entries:
+  - m_Id: 23179763712
+    m_Key: continueButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127051702272
+    m_Key: menuButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157577846784
+    m_Key: HPText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293255192576
+    m_Key: StockText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 780234858496
+    m_Key: damageText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 917342461952
+    m_Key: speedText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1077749424128
+    m_Key: leaderText
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1848835881348104204
+  references:
+    version: 2
+    RefIds:
+    - rid: 1848835881348104204
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1697874781630

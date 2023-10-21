@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainMenu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainMenu
+  m_TableCollectionNameGuidString: 8c5564a59e7365649937064b5c31c215
+  m_Entries:
+  - m_Id: 20180836352
+    m_Key: newGameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119388708864
+    m_Key: loadGameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385097867264
+    m_Key: letterText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149256347648
+    m_Key: letterMenuText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 528010387456
+    m_Key: kingSignText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319406678016
+    m_Key: headlinerText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172916416512
+    m_Key: exitText
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1848835881348104196
+  references:
+    version: 2
+    RefIds:
+    - rid: 1848835881348104196
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1697872177266

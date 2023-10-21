@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainMenu_tr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 8c5564a59e7365649937064b5c31c215, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20180836352
+    m_Localized: Yeni oyun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119388708864
+    m_Localized: "Oyunu y\xFCkle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149256347648
+    m_Localized: Mektup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172916416512
+    m_Localized: "\xE7\u0131k\u0131\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319406678016
+    m_Localized: "B\xFCy\xFCc\xFC Katiline Mektup"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385097867264
+    m_Localized: "Sihirbazlar kendileri hakk\u0131nda \xE7ok d\xFC\u015F\xFCn\xFCrler.\n\nAte\u015F
+      toplar\u0131 ve sihirli oklar insanlar\u0131n can\u0131na hakk\u0131n\u0131
+      vermez.\n\nB\xFCy\xFCc\xFC \xE7eteleri bir\xE7ok k\xF6y\xFC ele ge\xE7irdi.
+      Oraya gidin ve onlar\u0131 yok edin.\n\nAncak her \u015Fey o kadar basit de\u011Fil.
+      D\xFC\u015Fman b\xFCy\xFClerinden \xF6lmemek i\xE7in gizli ve dikkatli olun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 528010387456
+    m_Localized: "Senin kral\u0131n"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private Vector3 cameraStartPosition = new Vector3(0.03f, 1.95f, -1.37f);
@@ -10,7 +12,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float projectileSpeed = 80f;
     [SerializeField] private int _projectileCount = 5;
     [SerializeField] private GameManager _gameManager;
-
+    [SerializeField] private Button _shootButton;
+    [SerializeField] private Button _aimButton;
 
     private Camera _playerCamera;
     private bool isCameraMoving = false;
@@ -29,31 +32,36 @@ public class PlayerShoot : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         _shootSound = GetComponentInChildren<AudioSource>();
         _projectileCount += _gameManager.LoadMaxProjectile();
+
+        _shootButton.onClick.AddListener(ShootProjectile);
+        _aimButton.onClick.AddListener(Aim);
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(1) && !isCameraMoving)
         {
-            if (isCameraAtStartPosition)
-            {
-                MoveCameraToPosition(cameraEndPosition, cameraEndRotation);
-                canShoot = true;
-                _characterController.enabled = false;
-                _playerMotorTest.enabled = false;
-            }
-            else
-            {
-                MoveCameraToPosition(cameraStartPosition, Quaternion.identity);
-                canShoot = false;
-                _characterController.enabled = true;
-                _playerMotorTest.enabled = true;
-            }
+            Aim();
         }
 
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        ShootProjectile();        
+    }
+
+    private void Aim()
+    {
+        if (isCameraAtStartPosition)
         {
-            ShootProjectile();
+            MoveCameraToPosition(cameraEndPosition, cameraEndRotation);
+            canShoot = true;
+            _characterController.enabled = false;
+            _playerMotorTest.enabled = false;
+        }
+        else
+        {
+            MoveCameraToPosition(cameraStartPosition, Quaternion.identity);
+            canShoot = false;
+            _characterController.enabled = true;
+            _playerMotorTest.enabled = true;
         }
     }
 
@@ -86,7 +94,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void ShootProjectile()
     {
-        if (_projectileCount > 0 )
+        if (Input.GetMouseButtonDown(0) && canShoot)
+            if (_projectileCount > 0 )
         {
             _projectileCount--;
 

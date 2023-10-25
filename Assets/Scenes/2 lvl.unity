@@ -21116,6 +21116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1257979424}
     - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
+      propertyPath: _aimIcon
+      value: 
+      objectReference: {fileID: 565526094}
+    - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
       propertyPath: _aimButton
       value: 
       objectReference: {fileID: 2025333124}
@@ -25141,6 +25145,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae9772ea62bbc724eb9b8ef81109f733, type: 3}
+--- !u!114 &565526094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4610160176932984003, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
+  m_PrefabInstance: {fileID: 2025333119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &565576165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4252784401376168, guid: 22a3fd8d3e59a1149bdcd775c0e87241, type: 3}
@@ -76637,6 +76652,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1058198604616862668, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112796548888173786, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2224473380186585641, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}

@@ -21354,6 +21354,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1257979424}
     - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
+      propertyPath: _aimIcon
+      value: 
+      objectReference: {fileID: 471914954}
+    - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
       propertyPath: _aimButton
       value: 
       objectReference: {fileID: 143931099}
@@ -23590,6 +23594,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4202130902894980, guid: 6910e2407cd484a42a0c2598114751a0, type: 3}
   m_PrefabInstance: {fileID: 876521399}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &471914954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4610160176932984003, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
+  m_PrefabInstance: {fileID: 143931096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &472852090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1498041528017854, guid: 0ba258545da721e488ecb71ffd143b6f, type: 3}

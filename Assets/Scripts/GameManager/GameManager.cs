@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private int _addProjectileMax;
     private int _addDmg;
     private float _addSpeed;
+    private float _mouseSensitive;
 
     public int CollectedCoins => _collectedCoins;
 
@@ -144,5 +145,18 @@ public class GameManager : MonoBehaviour
     {
         int saveLevel = PlayerPrefs.GetInt("LevelProgress", 0);
         return saveLevel;
+    }
+
+    public void SaveMouseSensitive(float addMouseSensitive)
+    {
+        _mouseSensitive = addMouseSensitive;
+        PlayerPrefs.SetFloat("mouseSensitive", _mouseSensitive);
+    }
+
+    public float LoadMouseSensitive()
+    {
+        float mouseSensitive = PlayerPrefs.GetFloat("mouseSensitive", 0.5f);
+
+        return mouseSensitive;
     }
 }

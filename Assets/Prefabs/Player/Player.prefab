@@ -43,7 +43,7 @@ Transform:
   - {fileID: 2219988644576113708}
   - {fileID: 8878840154635483570}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3611270133506301454
 CharacterController:
@@ -130,6 +130,7 @@ MonoBehaviour:
   _xSensitivity: 30
   _ySensitivity: 30
   _joystick: {fileID: 0}
+  _gameManager: {fileID: 2957990014732729221, guid: c5cfed36620891142a9b44d250f2d77f, type: 3}
 --- !u!114 &4761424821999883041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,8 @@ MonoBehaviour:
   projectileSpeed: 40
   _projectileCount: 3
   _gameManager: {fileID: 0}
+  _shootButton: {fileID: 0}
+  _aimButton: {fileID: 0}
 --- !u!136 &6398754130696527160
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -20840,6 +20840,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1257979424}
     - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
+      propertyPath: _aimIcon
+      value: 
+      objectReference: {fileID: 1888509494}
+    - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
       propertyPath: _aimButton
       value: 
       objectReference: {fileID: 2054798946}
@@ -74153,6 +74157,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22a3fd8d3e59a1149bdcd775c0e87241, type: 3}
+--- !u!114 &1888509494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4610160176932984003, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
+  m_PrefabInstance: {fileID: 2054798943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1888870659
 PrefabInstance:
   m_ObjectHideFlags: 0

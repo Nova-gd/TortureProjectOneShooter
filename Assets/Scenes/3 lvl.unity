@@ -22387,6 +22387,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1257979424}
     - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
+      propertyPath: _aimIcon
+      value: 
+      objectReference: {fileID: 2401678587088213156}
+    - target: {fileID: 7749682481655721891, guid: e5cd5a10361d68f4f949b4ae70fad175, type: 3}
       propertyPath: _aimButton
       value: 
       objectReference: {fileID: 2401678587088213152}
@@ -82447,6 +82451,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2401678587088213156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4610160176932984003, guid: ddcfef44ed4fbf34e97b70223fcb3082, type: 3}
+  m_PrefabInstance: {fileID: 2401678587088213151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4561317222530515714

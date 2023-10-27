@@ -35,39 +35,79 @@ public class PlayerShoot : MonoBehaviour
         _shootSound = GetComponentInChildren<AudioSource>();
         _projectileCount += _gameManager.LoadMaxProjectile();
 
-        _shootButton.onClick.AddListener(ShootProjectile);
         _aimButton.onClick.AddListener(Aim);
+        _shootButton.onClick.AddListener(ShootProjectile);
+
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !isCameraMoving)
+        if (!Device.IsMobile)
         {
-            Aim();
+            if (Input.GetMouseButtonDown(1))
+            {
+                Aim();
+            }
         }
 
-        ShootProjectile();
+        if (!Device.IsMobile)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                ShootProjectile();
+            }
+
+        }
     }
 
     private void Aim()
     {
-        if (isCameraAtStartPosition)
+        if (!isCameraMoving)
         {
-            MoveCameraToPosition(cameraEndPosition, cameraEndRotation);
-            _aimIcon.gameObject.SetActive(true);
-            canShoot = true;
-            _characterController.enabled = false;
-            _playerMotorTest.enabled = false;
-        }
-        else
-        {
-            MoveCameraToPosition(cameraStartPosition, Quaternion.identity);
-            _aimIcon.gameObject.SetActive(false);
-            canShoot = false;
-            _characterController.enabled = true;
-            _playerMotorTest.enabled = true;
+            if (isCameraAtStartPosition)
+            {
+                MoveCameraToPosition(cameraEndPosition, cameraEndRotation);
+
+                _aimIcon.gameObject.SetActive(true);
+
+                canShoot = true;
+
+                _characterController.enabled = false;
+                _playerMotorTest.enabled = false;
+            }
+            else
+            {
+                MoveCameraToPosition(cameraStartPosition, Quaternion.identity);
+                _aimIcon.gameObject.SetActive(false);
+                canShoot = false;
+                _characterController.enabled = true;
+                _playerMotorTest.enabled = true;
+            }
         }
     }
+
+    private void ShootProjectile()
+    {
+        if (canShoot)
+        {
+            if (_projectileCount > 0)
+            {
+                _projectileCount--;
+
+                _shootSound.Play();
+
+                GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
+                Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
+
+                Vector3 shootDirection = _playerCamera.transform.forward;
+                projectileRigidbody.velocity = shootDirection * projectileSpeed;
+
+                projectile.transform.Rotate(90f, 0f, 0f);
+            }
+        }
+    }
+
+
 
     private void MoveCameraToPosition(Vector3 targetPosition, Quaternion targetRotation)
     {
@@ -94,53 +134,6 @@ public class PlayerShoot : MonoBehaviour
         _playerCamera.transform.localRotation = targetRotation;
         isCameraMoving = false;
         isCameraAtStartPosition = !isCameraAtStartPosition;
-    }
-
-    private void ShootProjectile()
-    {
-        if (!Device.IsMobile)
-        {
-            if (Input.GetMouseButtonDown(0) && canShoot)
-            {
-                if (_projectileCount > 0)
-                {
-                    _projectileCount--;
-
-                    _shootSound.Play();
-
-                    GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
-                    Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
-
-                    Vector3 shootDirection = _playerCamera.transform.forward;
-                    projectileRigidbody.velocity = shootDirection * projectileSpeed;
-
-                    projectile.transform.Rotate(90f, 0f, 0f);
-                }
-            }
-
-        }
-
-        if (Device.IsMobile)
-        {
-            if (canShoot)
-            {
-                if (_projectileCount > 0)
-                {
-                    _projectileCount--;
-
-                    _shootSound.Play();
-
-                    GameObject projectile = Instantiate(playerProjectilePrefab, projectileSource.position, _playerCamera.transform.rotation);
-                    Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
-
-                    Vector3 shootDirection = _playerCamera.transform.forward;
-                    projectileRigidbody.velocity = shootDirection * projectileSpeed;
-
-                    projectile.transform.Rotate(90f, 0f, 0f);
-                }
-            }
-
-        }
     }
 
     public void SetProjectileCount()

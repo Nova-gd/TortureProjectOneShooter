@@ -34,11 +34,11 @@ public class PlayerLook : MonoBehaviour
             float joystickHorizontal = _joystick.Horizontal;
             float joystickVertical = _joystick.Vertical;
 
-            _xRotation -= (joystickVertical * Time.deltaTime) * _ySensitivity;
+            _xRotation -= (joystickVertical * Time.deltaTime) * _ySensitivity * _gameManager.LoadMouseSensitive();
             _xRotation = Mathf.Clamp(_xRotation, -_visionArea, _visionArea);
 
             _camera.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
-            transform.Rotate(Vector3.up * (joystickHorizontal * Time.deltaTime) * _xSensitivity);
+            transform.Rotate(Vector3.up * (joystickHorizontal * Time.deltaTime) * _xSensitivity * _gameManager.LoadMouseSensitive());
         }
     }
 }

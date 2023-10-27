@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 20180836352
-    m_Localized: New Game
+    m_Localized: Start
     m_Metadata:
       m_Items: []
   - m_Id: 119388708864
@@ -47,6 +47,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 528010387456
     m_Localized: Your king
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1902693062746112
+    m_Localized: 'Levels:'
     m_Metadata:
       m_Items: []
   references:

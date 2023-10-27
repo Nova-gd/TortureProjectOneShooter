@@ -28,7 +28,7 @@ public class PlayerMotorTest : MonoBehaviour
             {
                 float joystickHorizontal = _joystick.Horizontal;
                 float joystickVertical = _joystick.Vertical;
-                Vector2 joystickInput = new Vector2(joystickHorizontal, joystickVertical);
+                Vector2 joystickInput = new Vector2(2*joystickHorizontal, 2*joystickVertical);
                 ProcessMove(joystickInput);
             }
 
@@ -41,7 +41,7 @@ public class PlayerMotorTest : MonoBehaviour
             }
         }
 
-        //_controller.Move(_playerVelocity * Time.deltaTime);
+        _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
     public void ProcessMove(Vector2 input)
